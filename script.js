@@ -29,8 +29,6 @@
 
 		service.getItems = getItems;
 
-		return service;
-
 		var res = CachableItems.programmingLangs,
 			items = [];
 
@@ -58,6 +56,8 @@
 
 			return defer.promise;
 		}
+
+		return service;
 	}
 })();
 
