@@ -13,7 +13,7 @@
 			programmingLangs: {
 				name: 'programmingLangs',
 				url: './back/langs.json',
-				requiredVersion: '1.0'
+				requiredVersion: '2.0'
 			}
 		}
 	}
