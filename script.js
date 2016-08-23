@@ -45,7 +45,7 @@
 			var defer = $q.defer();
 
 			if (items.length) {
-				refer.resolve(items);
+				defer.resolve(items);
 			} else {
 				$http({
 					method: 'get',
