@@ -32,9 +32,12 @@
 		var res = CachableItems.programmingLangs,
 			items = [];
 
-		if (localStorage.getItem(res.name)) {
+		var storedItems = localStorage.getItem(res.name),
+			storedItemsVersion = localStorage.getItem(res.name + '-v');
+
+		if (storedItems && storedItemsVersion === res.requiredVersion) {
 			try {
-				items = JSON.parse(localStorage.getItem(res.name));
+				items = JSON.parse(storedItems);
 			} catch (e) {}
 		}
 
@@ -49,6 +52,9 @@
 					url: res.url
 				}).then(function(response){
 					defer.resolve(response.data);
+
+					localStorage.setItem(res.name, JSON.stringify(response.data));
+					localStorage.setItem(res.name + '-v', res.requiredVersion);
 				}).catch(function(reason){
 					defer.reject(reason);
 				});
