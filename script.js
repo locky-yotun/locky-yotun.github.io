@@ -37,7 +37,7 @@
 		if (localStorage.getItem(res.name)) {
 			try {
 				items = JSON.parse(localStorage.getItem(res.name));
-			} catch () {}
+			} catch (e) {}
 		}
 
 		function getItems(){
