@@ -5,6 +5,11 @@
 	<title>Test</title>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
+	<style>
+	    button:hover {
+	        color: red;
+	    }
+	</style>
 </head>
 <body ng-app="app">
 	<div ng-controller="TestController as vm">
@@ -12,5 +17,8 @@
 			<li ng-repeat="item in vm.items" ng-bind="item"></li>
 		</ul>
 	</div>
+	
+	<button onclick="alert(1)"></button>
+	
 </body>
 </html>
