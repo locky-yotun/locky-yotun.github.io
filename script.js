@@ -9,9 +9,9 @@
         buttonEl.addEventListener('click', showModal, false);
         
         function showModal() {
-          modalEl.classList.add('visible');
-          bodyEl.classList.add('visible');
-          htmlEl.classList.add('visible');
+          modalEl.classList.toggle('visible');
+          bodyEl.classList.toggle('visible');
+          htmlEl.classList.toggle('visible');
         }
     });
 })();
