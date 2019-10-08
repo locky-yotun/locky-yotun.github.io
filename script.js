@@ -1,11 +1,17 @@
 (function () {
     window.addEventListener('DOMContentLoaded', () => {
-        const formEl = document.querySelector('form');
+        const buttonEl = document.querySelector('button');
         
-        formEl.addEventListener('submit', handleSubmit, false);
+        const modalEl = document.querySelector('.shadow');
+        const bodyEl = document.querySelector('body');
+        const htmlEl = document.querySelector('html');
         
-        function handleSubmit(event) {
-            console.log('[zaytsev] {event}: ', {event});
+        buttonEl.addEventListener('click', showModal, false);
+        
+        function showModal() {
+          modalEl.classList.add('visible');
+          bodyEl.classList.add('visible');
+          htmlEl.classList.add('visible');
         }
     });
 })();
