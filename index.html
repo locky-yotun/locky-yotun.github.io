@@ -5,12 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title>Test</title>
     <script type="text/javascript" src="script.js"></script>
+    <style>
+        html.visible, body.visible {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .content {
+            background: #ccc;
+            border-radius: 10px;
+            margin: 10px;
+            height: 3000px;
+        }
+        
+        .shadow {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 0, 0, .3);
+        }
+        
+        .actions {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            height: 100px;
+            background: #fff;
+            border-radius: 10px;
+        }
+        
+        .shadow.visible {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <div class="content">&nbsp;</div>
+    <button>Open modal</button>
     <div class="shadow">
       <div class="actions"></div>
     </div>
-    <button>Open modal</button>
 </body>
 </html>
