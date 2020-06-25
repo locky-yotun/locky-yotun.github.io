@@ -12,20 +12,33 @@
             btnEl.addEventListener('click', loadOtherPage);
 
             function loadOtherPage() {
-                fetch('./indexx.html', {
-                    method: 'GET',
-                    mode: 'same-origin',
-                    headers: {
-                        'Content-Type': 'text/html'
-                    },
-                }).then(response => {
-                    console.log('[zaytsev] response: ', response);
-                });
+                fetch('https://zaytsev-mxm.github.io/toster/indexx.html')
+                    .then(function (response) {
+                        // When the page is loaded convert it to text
+                        return response.text()
+                    })
+                    .then(function (html) {
+                        // Initialize the DOM parser
+                        var parser = new DOMParser();
+
+                        // Parse the text
+                        var doc = parser.parseFromString(html, "text/html");
+
+                        // You can now even select part of that html as you would in the regular DOM
+                        // Example:
+                        // var docArticle = doc.querySelector('article').innerHTML;
+
+                        console.log(doc);
+                    })
+                    .catch(function (err) {
+                        console.log('Failed to fetch page: ', err);
+                    });
+                ;
             }
         });
     </script>
 </head>
 <body>
-    <button>click</button>
+<button>click</button>
 </body>
 </html>
