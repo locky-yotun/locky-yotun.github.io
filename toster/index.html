@@ -12,7 +12,13 @@
             btnEl.addEventListener('click', loadOtherPage);
 
             function loadOtherPage() {
-                fetch('./indexx.html').then(response => {
+                fetch('./indexx.html', {
+                    method: 'GET',
+                    mode: 'same-origin',
+                    headers: {
+                        'Content-Type': 'text/html'
+                    },
+                }).then(response => {
                     console.log('[zaytsev] response: ', response);
                 });
             }
